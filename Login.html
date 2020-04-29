@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		* {
+			box-sizing: border-box;
+			font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto,
+				oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue",
+				Arial, sans-serif;
+			font-size: 16px;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		body {
+			background-color: #ffffff;
+		}
+
+		.login {
+			display: fixed;
+			margin: 150px auto;
+			width: 400px;
+			background-color: #ffffff;
+			border: 1px solid #80a3d7;
+			vertical-align: middle;
+		}
+
+		.login h1 {
+			text-align: center;
+			margin: auto;
+			margin-bottom: 20px;
+			color: #5b6574;
+			font-size: 24px;
+			padding: 10px 0 20px 0;
+			border-bottom: 1px solid #dee0e4;
+			width: 90%;
+		}
+
+		.login form {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-top: 20px;
+		}
+
+		.login form label {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 50px;
+			height: 50px;
+			background-color: #3d85ef;
+			color: #ffffff;
+		}
+
+		.login form label:hover {
+			background-color: #3274d6;
+		}
+
+		.login form input[type="text"] {
+			width: 310px;
+			height: 50px;
+			border: 3px solid #ebedf0;
+			margin-bottom: 20px;
+			padding: 0 15px;
+		}
+
+		.login form input[type="password"] {
+			width: 310px;
+			height: 50px;
+			border: 3px solid #ebedf0;
+			margin-bottom: 20px;
+			padding: 0 15px;
+		}
+
+		.login form input[type="text"]:hover {
+			border: 3px solid #d4d6d9;
+		}
+
+		.login form input[type="password"]:hover {
+			border: 3px solid #d4d6d9;
+		}
+
+		.login form .errmessage, .login form .warnmessage, .login form .infomessage {
+			width: 100%;
+			color: #ffffff;
+			text-align: center;
+			padding: 5px;
+			margin: 10px 0px 5px 0px;
+		}
+
+		.login form input[type="submit"],
+		.login form button {
+			width: 100%;
+			padding: 15px;
+			margin-top: 1px;
+			margin-bottom: 1px;
+			background-color: #3274d6;
+			border: 0;
+			cursor: pointer;
+			font-weight: normal;
+			color: #ffffff;
+		}
+
+		.login form input[type="submit"]:hover,
+		.login form button:hover {
+			margin-top: 1px;
+			margin-bottom: 1px;
+			background-color: #4b86dd;
+		}
+
+		.login form .btnDiv {
+			width: 100%;
+			padding: 1px;
+			margin: 0px;
+			background-color: #3274d6;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="mainDiv" class="login">
+		<h1 id="h1"> 
+			Login form <sub>ver. 0.4</sub>
+		</h1>
+		<form id="form" action="Second.html" onsubmit="return checkInput(this)" method="GET">
+			<!-- onsubmit="checkInput()" -->
+			<label id="lbl1" for="username"> <i class="material-icons" style="font-size: 26px">person</i> </label>
+			<input type="text" id="username" name="username" placeholder="Username">
+			<label id="lbl2" for="password"><i class="material-icons" style="font-size: 26px">lock_outline</i></label>
+			<input type="password" id="password" name="password" placeholder="Password"> <!-- required -->
+
+			<div class="errmessage" id="errmessage" style="display: none;" onmousemove="mouseOverElement(this, event);"
+						onmouseout="mouseOutButton();">				
+			</div> 
+
+			<div class="warnmessage" id="warnmessage" style="display: none;" onmousemove="mouseOverElement(this, event);"
+						onmouseout="mouseOutButton();">				
+			</div>
+
+			<div class="infomessage" id="infomessage" style="display: none;" onmousemove="mouseOverElement(this, event);"
+						onmouseout="mouseOutButton();">				
+			</div>
+
+			<div id="btnDiv" class="btnDiv" onmousemove="mouseOverElement(this, event);" onmouseout="mouseOutButton();">
+				<button id="sub" type="submit" onmousemove="mouseOverElement(this, event);"
+					onmouseout="mouseOutButton();">Login</button>
+			</div> <!-- onclick="checkInput();" -->
+		</form>
+	</div>
+
+	<script src="loginjscript.js"> </script>
+
+</body>
+
+</html>
